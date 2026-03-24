@@ -1,7 +1,8 @@
 #include <iostream>
 using namespace std;
 
-void merge(int arr[], int l, int m, int r) {
+void merge(int arr[], int l, int m, int r) 
+{
     int n1 = m - l + 1;
     int n2 = r - m;
 
@@ -17,11 +18,15 @@ void merge(int arr[], int l, int m, int r) {
     int i = 0, j = 0, k = l;
 
     // Merge the temp arrays
-    while (i < n1 && j < n2) {
-        if (L[i] <= R[j]) {
+    while (i < n1 && j < n2) 
+    {
+        if (L[i] <= R[j]) 
+        {
             arr[k] = L[i];
             i++;
-        } else {
+        } 
+        else 
+        {
             arr[k] = R[j];
             j++;
         }
@@ -29,21 +34,25 @@ void merge(int arr[], int l, int m, int r) {
     }
 
     // Copy remaining elements
-    while (i < n1) {
+    while (i < n1) 
+    {
         arr[k] = L[i];
         i++;
         k++;
     }
 
-    while (j < n2) {
+    while (j < n2) 
+    {
         arr[k] = R[j];
         j++;
         k++;
     }
 }
 
-void mergeSort(int arr[], int l, int r) {
-    if (l < r) {
+void mergeSort(int arr[], int l, int r) 
+{
+    if (l < r) 
+    {
         int m = (l + r) / 2;
 
         mergeSort(arr, l, m);
@@ -53,7 +62,8 @@ void mergeSort(int arr[], int l, int r) {
     }
 }
 
-int main() {
+int main() 
+{
     int arr[] = {12, 11, 13, 5, 6, 7};
     int n = sizeof(arr) / sizeof(arr[0]);
 
